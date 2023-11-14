@@ -1,10 +1,10 @@
-
 -- create
 CREATE table cars(
  id INTEGER primary key,
  name TEXT not null,
  carname TEXT not null
 );
+/* DROP TABLE cars */
 
 -- insert
 INSERT INTO cars VALUES (1, 'John', 'Nissan');
@@ -18,7 +18,7 @@ UPDATE cars SET year=2015 WHERE id=2;
 
 DELETE FROM cars WHERE id=3;
 
-CREATE INDEX IF NOT EXISTS index_name ON cars(carname);
+CREATE INDEX IF NOT EXISTS index_name ON cars(name);
+/* DROP INDEX index_name ON cars */
 
-
-SELECT * FROM cars;
+SELECT * FROM cars WHERE name='John';
