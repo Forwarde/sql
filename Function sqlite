@@ -1,0 +1,31 @@
+
+-- create
+CREATE table customers(
+ empid INTEGER primary key,
+ name TEXT not null,
+ empl TEXT not null
+);
+
+-- insert
+INSERT INTO customers VALUES (1, 'Clark', 'Sales');
+INSERT INTO customers VALUES (2, 'Dave', 'Accounting');
+INSERT INTO customers VALUES (3, 'Ava', 'Sales');
+INSERT INTO customers VALUES (4, 'Akshar', 'Sales');
+
+/*
+DELETE FROM customers
+WHERE empl='Sales';
+*/
+-- fetch 
+SELECT AVG(empid) FROM customers; /* среднее значение | используется только для типов данных INT FLOAT */
+SELECT COUNT(*) FROM customers WHERE empid; /* подсчет количество строк */
+SELECT MIN(empid) FROM customers; /* Значение миинимум */
+SELECT MAX(empid) FROM customers; /* Значение максимум */
+SELECT SUM(empid) FROM customers; /* вычисления суммы числовых значений */
+/* SELECT DISTINCT name FROM customers;  получения уникальных значений из указанного столбца*/
+/* SELECT name, COUNT(*) AS names FROM customers GROUP BY name;   Определяет, что строки должны быть сгруппированы по уникальным значениям в столбце name. */
+/*
+SELECT empid, COUNT(*) AS ids
+FROM customers
+GROUP BY empid
+HAVING COUNT(*) < 10;  используется для фильтрации результатов запроса */
